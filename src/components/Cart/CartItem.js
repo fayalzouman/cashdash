@@ -43,9 +43,6 @@ class CartItem extends Component {
                     class="form-control"
                     aria-label="Amount (to the nearest dollar)"
                     // value={this.props.item.quantity}
-                    onClick={() =>
-                      cartStore.updateQuantity(this.props.item.quantity)
-                    }
                   />
 
                   <button

@@ -9,9 +9,6 @@ import Drawer from "../Drawer";
 import productsStore from "../store/productsStore";
 
 class ProductList extends Component {
-  // async componentDidMount() {
-  //   await productsStore.fetchProducts();
-  // }
   render() {
     const productCards = productsStore.products.map(product => (
       <ProductCard key={product.id} product={product} />
@@ -23,7 +20,6 @@ class ProductList extends Component {
           <h3 style={{ color: "green", textAlign: "center" }}>Products</h3>
           <div className="row">{productCards}</div>
         </div>
-        {/* <Drawer /> */}
       </Container>
     );
   }
