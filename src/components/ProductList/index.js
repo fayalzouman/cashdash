@@ -4,7 +4,6 @@ import { Container } from "react-bootstrap";
 
 // Components
 import ProductCard from "./ProductCard";
-import Drawer from "../Drawer";
 // Store
 import productsStore from "../store/productsStore";
 

@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { observer } from "mobx-react";
-import cartStore from "../store/cartStore";
 import { Link, Redirect } from "react-router-dom";
 import Modal from "react-responsive-modal";
+
+//Store
+import cartStore from "../store/cartStore";
 
 class ProductCard extends Component {
   state = {

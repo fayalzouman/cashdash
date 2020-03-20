@@ -34,19 +34,6 @@ class CartStore {
   catch(err) {
     console.error(err);
   }
-  // getorderHistory = async () => {
-  //   try {
-  //     const res = await instance.get("app/user/history/");
-  //     console.log("[cartstore]", res.data);
-  //     let history = res.data.filter(order => order.cart_in_use === false);
-  //     this.previousOrders = history;
-  //     this.statusMessage = "Success";
-  //     console.log("RESPONSE", this.statusMessage);
-  //   } catch (err) {
-  //     this.statusMessage = err.response;
-  //     console.log("ERROR", err);
-  //   }
-  // };
 
   addItemToCart = async newProduct => {
     const foundProduct = this.products.find(
