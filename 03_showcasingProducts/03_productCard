@@ -66,3 +66,5 @@ We use this.props. because we used { } to call in the product from the cartStore
 
 Congrats! That’s the first thing we can check off the list!
 You can now move the Trello card from Doing to Done! 
+
+Make sure you you add, commit and push your code to your repository. 
