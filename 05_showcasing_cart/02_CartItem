@@ -31,6 +31,8 @@ class CartItem extends Component {
               <div className="card-body">
                 <h5 className="card-title">Name: {this.props.item.name}</h5>
                 <p className="card-text">Price: {this.props.item.price} KD</p>
+                <p className="card-text">Quantity: {item.quantity}</p>
+
         </div>
             </div>
           </div>
