@@ -20,7 +20,7 @@ You will also need to add:
 yarn add mobx
 yarn add mobx-react
 
-This will allow your website render on your screen.
+This will allow you to create stores. Stores will hold all of our functions which will be easily accessible to the different components.
 
 import React from "react";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
