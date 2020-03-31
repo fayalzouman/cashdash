@@ -55,8 +55,9 @@ This indicates a web page. The path identifies the url. The component identifies
 
 export default withRouter(observer(App));
 As you can see, the App file is wrapped with an observer and withRouter. 
-observer will allow the user to see the website on their screen.
-withRouter will allow the user to click through multiple webpages.
+If a component is using react-router, the observer will block the component and the router will break. 
+To solve this problem, we wrap the component with withRouter which will give the component access to the router again!
+
 
 Now we will have to create a folder that will hold the code to render our product list.
  
