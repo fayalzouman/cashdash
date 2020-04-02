@@ -8,6 +8,7 @@ First you’ll need to fork and clone the project’s repo to have a copy of the
 
 •	Click Fork on the right corner of the page
 
+
 Once that’s done you’ll need to Clone it. On your terminal:
 
 •	Use mkdir to create a folder (aka a directory) on your computer for your project. We’re gonna call it cash-dash
