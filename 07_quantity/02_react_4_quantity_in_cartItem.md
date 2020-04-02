@@ -1,39 +1,43 @@
-UpdateQuantity Function in CartItem
+# UpdateQuantity Function in CartItem
 
-Now, in your CartItem.js file, we need to add a state called quantity.
-In that quantity, we’re going to use .find to go over the products and assign the item.id to this.props.item.id.
-Right outside the parenthesis we’re going to add .quantity to show that we specifically want the quantity.
-
+Now, in your `CartItem.js` file, we need to add a state called `quantity`.
+In that quantity, we’re going to use `.find` to go over the `products` and assign the `item.id` to `this.props.item.id`.
+Right outside the parenthesis we’re going to add `.quantity` to show that we specifically want the quantity.
+```sh
 Your code should look like this:
   state = {
     quantity: cartStore.products.find(item => item.id === this.props.item.id)
       .quantity
   };
-
-Next we will create another function called handleChange that will take e as a variable.
-This function will call setState and call ({ [e.target.name]: e.target.value })
+```
+Next we will create another function called` handleChange` that will take` e` as a variable.
+This function will call `setState` and call` ({ [e.target.name]: e.target.value })`
 Your code should look like this:
+```sh
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
-
-We use e.target.name to dynamically update an object’s property. It retrieves the value of your input, so whatever you insert in your input can be accessed through e.target.value.
+```
+We use `e.target.name` to dynamically update an object’s property. It retrieves the value of your input, so whatever you insert in your input can be accessed through `e.target.value`.
 
 Then, we’re going continue this code:
+```sh
     const item = cartStore.products;
-
-.find over products and connect the item’s id to this.props.item’s id.
+```
+`.find `over products and connect the `item`’s `id` to `this.props.item`’s id.
 We do this so the quantity can be updated through the cartStore.
 
 Your code should look like this:
+```sh
 const item = cartStore.products.find(
       item => item.id === this.props.item.id
     );
-
-Lastly, create a button using the onClick function and pass …item and quantity.
-We pass …item because we want to send the whole item, and we use quantity to call this.state.quantity so it can be updated on our screens.
+```
+Lastly, create a button using the `onClick` function and pass `…item` and `quantity`.
+We pass `…item` because we want to send the whole item, and we use quantity to call `this.state.quantity `so it can be updated on our screens.
 
 Your code should look like this:
+```sh
                   <button
                     onClick={() =>
                       cartStore.updateQuantity({
@@ -44,8 +48,9 @@ Your code should look like this:
                   >
                     Update quantity
                   </button>
-
-Your final CartItem.js file should now look like this:
+```
+Your final `CartItem.js` file should now look like this:
+```sh
 import React, { Component } from "react";
 import { observer } from "mobx-react";
 
@@ -109,9 +114,9 @@ class CartItem extends Component {
 }
 export default observer(CartItem);
 
-
+```
 Congrats!
 
 Now your quantity is successfully updated!
 
-You can now move your Trello card from Doing to Done!
+You can now move your Trello card from `Doing` to` Done!
