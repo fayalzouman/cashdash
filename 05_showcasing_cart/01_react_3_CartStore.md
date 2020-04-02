@@ -55,7 +55,14 @@ To turn this class into a store we will use the decorate method from the MobX li
 Import decorate and observable like so:
 import { decorate, observable } from "mobx";
 ```
-At the bottom, right before you export the class include the `decorate` like so:
+At the bottom, right before you export the class include the `decorate`. 
+
+The decorate method takes two arguments:
+
+- The class that will become our store
+- An object that defines the status of the store's parameters.
+
+It will look like this:
 ```sh
 decorate(CartStore, {
   products: observable,
