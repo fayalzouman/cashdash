@@ -3,7 +3,7 @@ Now that we have our cards, we need to render them on the browser.
 
 Again, like the `ProductList.js`, we need to list them.
 
-Make sure to import the needed functions, included the `cartStore` and `CartItem file`.
+Make sure to import the needed functions, included the `cartStore` and `CartItem file.
 
 The thing that’s different this time, however, is that we’re using `state`.
 
