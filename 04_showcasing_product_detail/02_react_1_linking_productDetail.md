@@ -1,22 +1,24 @@
-Linking ProductDetail
+# Linking ProductDetail
 
-For users to be able to click on the link on the card, make sure you include a link function and import it from Bootstrap. They  should be located in your ProductCard.js file.
+For users to be able to click on the link on the card, make sure you include a link function and import it from Bootstrap. They  should be located in your `ProductCard.js` file.
 
 The code should look like this:
+```sh
 import { Link } from "react-router-dom";
 
           <Link to={`/productdetail/${this.props.product.id}`}>Details </Link>
-
-Now, it’s time to add the route for the product detail in the App.js
-
+```
+Now, it’s time to add the route for the product detail in the `App.js`
+```sh
            <Route
               path="/productdetail/:productdetailID?"
               component={ProductDetail}
             />
+```
+We include `/:productdetailID?` at the end because each product detail depends on the different product that gets picked. Therefore, it will always change. This allows the link to be dynamic.
 
-We include /:productdetailID? at the end because each product detail depends on the different product that gets picked. Therefore, it will always change. This allows the link to be dynamic.
-
-Your final App.js should look like this:
+Your final `App.js` should look like this:
+```sh
 import React from "react";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { observer } from "mobx-react";
@@ -49,10 +51,10 @@ function App() {
 }
 
 export default withRouter(observer(App));
+```
 
 
-
-Congrats! You’re now able to view the products’ details! Make sure to move the trello card from Doing to Done!
+Congrats! You’re now able to view the products’ details! Make sure to move the trello card from `Doing` to `Done`!
 
 Make sure you add, commit and push all your changes to your repo!
  
