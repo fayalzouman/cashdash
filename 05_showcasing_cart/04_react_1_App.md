@@ -1,7 +1,7 @@
-App.js
+# App.js
 
-For the final step, make sure to include a Route for the cart!
-
+For the final step, make sure to include a `Route` for the cart!
+```sh
 import React from "react";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { observer } from "mobx-react";
@@ -33,10 +33,10 @@ function App() {
 }
 
 export default withRouter(observer(App));
-
+```
 
 Congrats!
 
 You’re now able to access your cart!
 
-Make sure to move your Trello card from Doing to Done!
+Make sure to move your Trello card from `Doing` to `Done`!
