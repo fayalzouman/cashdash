@@ -1,15 +1,17 @@
-RemoveItem Function in CartItem
+# RemoveItem Function in CartItem
 
-Now, to create a delete button from the car, we just need to create a button, like we did for the add function and pass the removeItemFromCart function from the cartStore.
+Now, to create a delete button from the cart, we just need to create a button, like we did for the add function and pass the `removeItemFromCart` function from the `cartStore`.
 
-Send the  item using props and you’re good to go!
+Send the `item` using `props` and you’re good to go!
+```sh
                 <button
                   onClick={() => cartStore.removeItemFromCart(this.props.item)}
                 >
                   Remove Item
                 </button>
-
+```
 Your final code should look like this:
+```sh
 import React, { Component } from "react";
 import { observer } from "mobx-react";
 
