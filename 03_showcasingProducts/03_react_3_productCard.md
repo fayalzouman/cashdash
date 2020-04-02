@@ -30,11 +30,10 @@ We will call the list like so
 ```sh
     const { product } = cartStore;
 ```
-We use the `{ }` around the product to call in the information using props. 
-You can find more information about props here.
+We use the `{ }` around the product to call in the information using props.  Props is an object that holds information about its component.
+You can find more information about props [here](https://reactjs.org/docs/components-and-props.html).
 
-This is the link to the cards:
-https://getbootstrap.com/docs/4.0/components/card/
+[This](https://getbootstrap.com/docs/4.0/components/card/) is the link to the cards:
 
 Copy-paste the code into your command line and incorporate the list of items that we want to showcase for each item:
 
