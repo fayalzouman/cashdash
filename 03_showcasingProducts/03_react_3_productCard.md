@@ -18,6 +18,7 @@ yarn add react-bootstrap bootstrap
 We will be using the code that Bootstrap provides to organize the information of our products into cards. This way, the products will be listed neatly.
 
 In the card, we will include the product’s
+
 •	imageURL
 
 •	name
@@ -29,13 +30,14 @@ We will call the list like so
 ```sh
     const { product } = cartStore;
 ```
-We use the { } around the product to call in the information using props. 
+We use the `{ }` around the product to call in the information using props. 
 You can find more information about props here.
 
 This is the link to the cards:
 https://getbootstrap.com/docs/4.0/components/card/
 
 Copy-paste the code into your command line and incorporate the list of items that we want to showcase for each item:
+
 •	imageURL
 
 •	name
