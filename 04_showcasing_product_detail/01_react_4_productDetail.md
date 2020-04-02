@@ -90,15 +90,15 @@ Then, we need to call the product that we defined from the productStore like so:
 ```
 Then we list the features that we want to showcase on the browser side a container:
 
-•	name
+- name
 
-•	imageURL
+- imageURL
 
-•	color
+- color
 
-•	material
+- material
 
-•	itemNumber
+- itemNumber
 
 Your code should look like this:
 ```sh
