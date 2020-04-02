@@ -1,20 +1,20 @@
-CartItem
+# CartItem
 
-Now, create a folder in components folder called Cart.
+Now, create a folder in components folder called `Cart`.
 
-In it, create a file called CartItem.js
+In it, create a file called `CartItem.js`.
 
 Import the necessary methods.
 
-Then, using the same idea as the ProductCard, create a card for the item in your cart from Bootstrap.
+Then, using the same idea as the `ProductCard`, create a card for the item in your cart from Bootstrap.
 
-Include the item’s name and price.
+Include the item’s `name` and `price`.
 
-Call the product that’s being identified from the cartStore as item.
+Call the product that’s being identified from the `cartStore` as `item`.
 
-Your code should look like this:
-
- import React, { Component } from "react";
+Once you're done, your code should look like this:
+```sh
+import React, { Component } from "react";
 import cartStore from "../store/cartStore";
 import { observer } from "mobx-react";
 
@@ -44,4 +44,4 @@ class CartItem extends Component {
 
 export default observer(CartItem);
 
- 
+ ```
