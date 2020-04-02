@@ -3,8 +3,9 @@
 Now, in your `CartItem.js` file, we need to add a state called `quantity`.
 In that quantity, we’re going to use `.find` to go over the `products` and assign the `item.id` to `this.props.item.id`.
 Right outside the parenthesis we’re going to add `.quantity` to show that we specifically want the quantity.
-```sh
+
 Your code should look like this:
+```sh
   state = {
     quantity: cartStore.products.find(item => item.id === this.props.item.id)
       .quantity
