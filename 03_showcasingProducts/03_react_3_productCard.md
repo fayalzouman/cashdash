@@ -1,4 +1,5 @@
-ProductCard
+#ProductCard
+
 Since we now have the formula to showcase our products, go back to the ProductList folder and create another file called ProductCard.js
 
 Import the React, observer and the store into the file like so:
