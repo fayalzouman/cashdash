@@ -119,4 +119,4 @@ Congrats!
 
 Now your quantity is successfully updated!
 
-You can now move your Trello card from `Doing` to` Done!
+You can now move your Trello card from `Doing` to` Done`!
