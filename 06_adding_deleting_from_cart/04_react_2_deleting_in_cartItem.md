@@ -59,5 +59,5 @@ class CartItem extends Component {
 
 export default observer(CartItem);
 
-
-Now you can move the trello card from Doing to Done! Congrats!
+```
+Now you can move the trello card from `Doing` to `Done`! Congrats!
