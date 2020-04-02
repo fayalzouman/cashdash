@@ -10,8 +10,8 @@ Your code should look like this:
       .quantity
   };
 ```
-Next we will create another function called` handleChange` that will take` e` as a variable.
-This function will call `setState` and call` ({ [e.target.name]: e.target.value })`
+Next we will create another function called `handleChange` that will take` e` as a variable.
+This function will call `setState` and call `({ [e.target.name]: e.target.value })`
 Your code should look like this:
 ```sh
   handleChange = e => {
