@@ -26,7 +26,7 @@ Your code should look like this:
     );
     return totalPrice;
 ```
-  Note that after `totalPrice` we added a +=.
+  Note that after `totalPrice` we added a `+=`.
   ```sh
         product => (totalPrice += product.price * product.quantity)
 ```
