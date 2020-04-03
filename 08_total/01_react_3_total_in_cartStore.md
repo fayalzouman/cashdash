@@ -1,38 +1,59 @@
-# Total
+# Showcasing the total in the Cart
 
-Now, for the final touch!
-```sh 
-Trello card: As a user I can see the total price in the cart 
+Now, so the total can be rendered on the screen, go to your `index.js` in your `Cart` folder.
+
+In the render, let `total` equal to `totalPrice`. Keep in mind that you will be calling it from `cartStore`.
+
+It should look like this:
+```sh
+    let total = cartStore.totalPrice;
 ```
+Then, after the `return` call the total. 
 
-We're going to showcase the total price of the cart so the user knows how much they're going to be paying for the items.
+Your final code should look like this:
+```sh
+import React, { Component } from "react";
+import { observer } from "mobx-react";
+import { Link } from "react-router-dom";
+import { Text, Button } from "reactstrap";
 
-In your `cartStore.js` create a function called `totalPrice` using `get`.
+// Component
 
-In that function create a variable called `totalPrice` and have it equal to 0. We do this so the system understands that the value is a number.
+//Store
+import cartStore from "../store/cartStore";
+import CartItem from "./CartItem";
 
-Then, create another variable called `cartPrice`that maps over `products`. 
+class Cart extends Component {
+  state = {
+    cartItems: []
+  };
 
-During that loop, we need to multiply the `price` and the `quantity` of each product and add it to the `totalPrice`.
-
-Then, return `totalPrice`.
-
-Your code should look like this:
-```sh 
- get totalPrice() {
-    let totalPrice = 0;
-    let cartPrice = this.products.map(
-      product => (totalPrice += product.price * product.quantity)
+  componentDidMount() {
+    const { products } = cartStore;
+    this.setState({ cartItems: products });
+  }
+  render() {
+    let cartItems = this.state.cartItems.map(item => <CartItem item={item} />);
+    let total = cartStore.totalPrice;
+    return (
+      <div className="container mt-5">
+        <div class="row">{cartItems}</div>
+        {cartStore.products.length !== 0 && (
+          <div>
+            <p className="card-text">Total:{total}</p>
+            <button onClick={() => cartStore.checkoutCart(this.props.history)}>
+              Checkout
+            </button>
+          </div>
+        )}
+      </div>
     );
-    return totalPrice;
+  }
+}
+
+export default observer(Cart);
 ```
-  Note that after `totalPrice` we added a `+=`.
-  ```sh
-        product => (totalPrice += product.price * product.quantity)
-```
-This allows the system to add the product of the `product.price * product.quantity` automatically.
 
-Try it with just an equal sign.
+Awesome work!
 
-You would notice that the numbers would just be placed next to each other and would not be added.
-
+Now, whenever you add or delete an item to your cart, the total amount will be updated on the screen!
