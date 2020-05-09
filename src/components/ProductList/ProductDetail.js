@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Container } from "react-bootstrap";
-import productsStore from "../store/productsStore";
 import { Link, Redirect } from "react-router-dom";
+
+//Store
+import productsStore from "../store/productsStore";
 
 class ProductDetail extends Component {
   async componentDidMount() {
@@ -15,14 +17,14 @@ class ProductDetail extends Component {
       return <Redirect to="/" />;
     }
     const product = productsStore.product;
-    // let description = productsStore.product.description.split("...");
-    // let viewedDescription = description.map(des => <div>{des}</div>);
 
     return (
       <Container style={{ backgroundColor: "white", padding: "20px" }}>
         <div>
-          <h5 style={{ color: "blue", textAlign: "center" }}>{product.name}</h5>
-          <img src={product.imageUrl} className="card-img-top" alt="..." />
+          <h5 style={{ color: "blue", textAlign: "center" }}>
+            {product.name.toUpperCase()}
+          </h5>
+          <img src={product.imageUrl} class="mr-3" alt="..." />
           {/* <h5 style={{ color: "blue", textAlign: "left" }}>
             {product.description}
           </h5> */}

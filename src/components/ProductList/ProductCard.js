@@ -33,7 +33,9 @@ class ProductCard extends Component {
           alt="..."
         />
         <div className="card-body">
-          <h5 className="card-title">{this.props.product.name}</h5>
+          <h5 className="card-title">
+            {this.props.product.name.toUpperCase()}
+          </h5>
           <p className="card-text">{this.props.product.price} KD</p>
 
           <button
@@ -47,6 +49,7 @@ class ProductCard extends Component {
           <Modal open={open} onClose={this.onCloseModal} center>
             <h4>Item added to cart!</h4>
           </Modal>
+
           <Link to={`/productdetail/${this.props.product.id}`}>Details </Link>
         </div>
       </div>

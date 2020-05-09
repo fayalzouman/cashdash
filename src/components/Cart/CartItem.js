@@ -1,62 +1,54 @@
 import React, { Component } from "react";
-import cartStore from "../store/cartStore";
 import { observer } from "mobx-react";
+
+//Store
+import cartStore from "../store/cartStore";
 
 class CartItem extends Component {
   state = {
-    newQuantity: 0
+    quantity: cartStore.products.find(item => item.id === this.props.item.id)
+      .quantity
   };
-  // componentDidMount() {
-  //   cartStore.findProduct(this.props.itemNo);
-  //   this.setState({ item: cartStore.item.quantity });
-  // }
-  //   componentDidMount() {
-  //     this.setState({newQuantity: this.props.quantity});
-  //  }
-  //  handleChange = (e) => {
-  //    this.setState({inputValue: e.target.value});
-  //  }
-  //  <input value={this.state.inputValue} onChange={this.handlechange} onBlur={() => this.props.actions.updateInput(this.state.inputValue)} />
-
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
   render() {
-    const item = cartStore.products;
+    const item = cartStore.products.find(
+      item => item.id === this.props.item.id
+    );
     return (
       <div>
         <div className="card mb-3" style={{ maxWidth: "540px" }}>
           <div className="row">
-            <div className="col-md-4">
-              {/* <img src="..." className="card-img" alt="..." /> */}
-            </div>
+            <div className="col-md-4"></div>
             <div className="col-md-8">
               <div className="card-body">
-                <h5 className="card-title">Name: {this.props.item.name}</h5>
-                <p className="card-text">Price: {this.props.item.price} KD</p>
-                <p className="card-text">
-                  Quantity: {this.props.item.quantity}
-                </p>
+                <h6 className="card-title">Name: {item.name.toUpperCase()}</h6>
+                <p className="card-text">Price: {item.price} KD</p>
+                <p className="card-text">Quantity: {item.quantity}</p>
                 <div className="input-group mb-3">
-                  <div className="input-group-prepend">
-                    {/* <span class="input-group-text">$</span> */}
-                  </div>
+                  <div className="input-group-prepend"></div>
                   <input
+                    name="quantity"
+                    value={this.state.quantity}
                     type="text"
                     class="form-control"
+                    onChange={this.handleChange}
                     aria-label="Amount (to the nearest dollar)"
-                    // value={this.props.item.quantity}
                   />
 
                   <button
                     onClick={() =>
-                      cartStore.updateQuantity(this.props.item.quantity)
+                      cartStore.updateQuantity({
+                        ...item,
+                        quantity: this.state.quantity
+                      })
                     }
                   >
                     Update quantity
                   </button>
                 </div>
-
-                <button
-                  onClick={() => cartStore.removeItemFromCart(this.props.item)}
-                >
+                <button onClick={() => cartStore.removeItemFromCart(item.id)}>
                   Remove Item
                 </button>
               </div>
@@ -67,5 +59,4 @@ class CartItem extends Component {
     );
   }
 }
-
 export default observer(CartItem);

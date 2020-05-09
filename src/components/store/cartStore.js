@@ -6,25 +6,21 @@ class CartStore {
   //   cartProduct = [];
   products = [];
   // item = null;
-  previousOrders = [];
 
-  fetchCartProductByID = async cartProductID => {
-    this.cartProduct = this.cartProduct.find(
-      cartProduct => +cartProduct.id === +cartProductID
-    );
-    const res = await instance.get(`productlist/`);
-  };
+  // fetchCartProductByID = async cartProductID => {
+  //   this.cartProduct = this.cartProduct.find(
+  //     cartProduct => +cartProduct.id === +cartProductID
+  //   );
+  //   const res = await instance.get(`productlist/`);
+  // };
 
-  findProduct = async itemNo => {
-    this.item = cartStore.products.find(product => product.id === itemNo);
-  };
+  // findProduct = async itemNo => {
+  //   this.item = cartStore.products.find(product => product.id === itemNo);
+  // };
 
   fetchCartItems = async () => {
     try {
-      const res = await instance.get(
-        //"app/product/detail/"
-        `app/cart/`
-      );
+      const res = await instance.get(`app/cart/`);
       this.products = res.data;
       this.loading = false;
     } catch (err) {
@@ -79,12 +75,9 @@ class CartStore {
       const cartItem = {
         product: productToDelete.id
       };
-      console.log("Deleting product: " + productToDelete.id);
-      const res = axios.delete("app/product/delete/", productToDelete.id);
-
-      console.log(res);
-      this.statusMessage = "Success";
-      console.log("RESPONSE", this.statusMessage);
+      console.log("Deleting item: " + cartItem);
+      const res = instance.delete("app/product/delete/", cartItem);
+      console.log("Result: ", res);
     } catch (err) {
       this.statusMessage = err.response;
       console.log("ERROR", err);
@@ -105,24 +98,24 @@ class CartStore {
     }
   };
 
-  get quantity() {
-    let total = 0;
-    this.products.forEach(product => (total += product.quantity));
-    return total;
-  }
+  // get quantity() {
+  //   let total = 0;
+  //   this.products.forEach(product => (total += product.quantity));
+  //   return total;
+  // }
 
   get totalPrice() {
     let totalPrice = 0;
     let cartPrice = this.products.map(
-      product => (totalPrice = product.price * product.quantity)
+      product => (totalPrice += product.price * product.quantity)
     );
-    return cartPrice;
+    return totalPrice;
   }
 }
 
 decorate(CartStore, {
   products: observable,
-  item: observable,
+  // item: observable,
   totalPrice: computed
 });
 

@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Divider from "@material-ui/core/Divider";
 
-const drawerWidth = 240;
+//Store
+import cartStore from "../store/cartStore";
+
+const drawerWidth = 330;
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -31,7 +34,8 @@ const useStyles = makeStyles(theme => ({
 
 export default function PermanentDrawerLeft() {
   const classes = useStyles();
-
+  const [quantity, setQuantity] = useState([]);
+  const item = cartStore.products.find(item => item.id === this.props.item.id);
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -45,14 +49,52 @@ export default function PermanentDrawerLeft() {
         anchor="right"
       >
         <div className={classes.toolbar} />
-        <Divider />
+        {/* { <Divider />
+   <Divider /> } */}
+        <div className="card mb-3" style={{ maxWidth: "540px" }}>
+          <div className="row">
+            <div className="col-md-4"></div>
+            <div className="col-md-8">
+              <div className="card-body">
+                {/* <h3 className="card-title">
+                  Name: {this.item.name.toUpperCase()}
+                </h3> */}
+                {/* <p className="card-text">Price: {item.price} KD</p>
+                <p className="card-text">Quantity: {item.quantity}</p> */}
+                {/* <div className="input-group mb-3">
+                  <div className="input-group-prepend"></div> */}
+                <input
+                  name="quantity"
+                  value={setQuantity}
+                  type="text"
+                  class="form-control"
+                  // onChange={this.handleChange}
+                  aria-label="Amount (to the nearest dollar)"
+                />
 
-        <Divider />
+                <button
+                  onClick={() =>
+                    cartStore.updateQuantity({
+                      ...item,
+                      quantity: setQuantity
+                    })
+                  }
+                >
+                  Update quantity
+                </button>
+              </div>
+              <button onClick={() => cartStore.removeItemFromCart(item.id)}>
+                Remove Item
+              </button>
+            </div>
+          </div>
+        </div>
+        {/* </div> */}
       </Drawer>
     </div>
   );
 }
-
+// ------------------------------------------------------------------------------------------------------------------------
 // import React, { Component } from "react";
 // import { observer } from "mobx-react";
 // import { makeStyles } from "@material-ui/core/styles";
