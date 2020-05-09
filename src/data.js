@@ -32,17 +32,6 @@ const products = [
     imageUrl:
       "https://nation.com.pk/digital_images/large/2015-05-10/jk-rowling-believes-in-standing-up-to-bullies-1431261222-3596.jpeg"
   }
-  // {
-  //   id: 4,
-  //   name: "sunglasses.",
-  //   price: 3,
-  //   description: "Plastic sunglasses with white frames.",
-  //   color: "white",
-  //   material: "plastic",
-  //   itemNumber: "4958-4983",
-  //   imageUrl:
-  //     "https://nation.com.pk/digital_images/large/2015-05-10/jk-rowling-believes-in-standing-up-to-bullies-1431261222-3596.jpeg"
-  // }
 ];
 
 export default products;
